@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 //Cargar configuración de api key
-dotenv.config({ path: '../.env' });
+dotenv.config();
 
 
 console.log(process.env.API_URL);
