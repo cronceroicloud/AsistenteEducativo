@@ -15,7 +15,7 @@ console.log("START");
 console.log("OPEN_API_KEY:", process.env.OPEN_API_KEY);
 console.log("API_URL:", process.env.API_URL);
 
-
+console.log("NAME:", process.env.NAME);
 console.log(process.env.API_URL);
 console.log("TEST_VAR:", process.env.TEST_VAR);
 
