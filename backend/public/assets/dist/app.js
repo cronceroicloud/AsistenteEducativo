@@ -24,6 +24,9 @@ const typingIndicator = document.getElementById("typingIndicator");
 document.getElementById("nombre").textContent = NOMBRE;
 const userId= Date.now() + Math.floor(777+Math.random()*1000);
 
+
+console.log(NOMBRE);
+
 // Función para manejar el evento de presionar Enter
 function handleKeyPress(event) {
     if (event.key === "Enter") {
