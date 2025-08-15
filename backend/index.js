@@ -20,6 +20,9 @@ const app = express();
 
 // server.ts (Node + Express)
 app.get('/config.js', (req, res) => {
+    console.log("name:");
+    console.log(process.env.NAME);
+    
     res.setHeader('Content-Type', 'application/javascript');
 
     res.send(`
