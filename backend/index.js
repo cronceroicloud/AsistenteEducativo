@@ -1,4 +1,4 @@
-//Importar dependencias
+// Importar dependencias
 import express from 'express';
 import dotenv from 'dotenv';
 import OpenAI from "openai";
@@ -6,25 +6,20 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import axios from 'axios';
 
-
-//Cargar configuración de api key
-dotenv.config();
-
+// Cargar dotenv solo para local
+dotenv.config(); // en Render se ignora, variables ya están en process.env
 
 // Obtener __dirname en ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-//Cargar express
+// Crear app Express
 const app = express();
 
-// server.ts (Node + Express)
+// ======== 1️⃣ Config dinámico ========
 app.get('/config.js', (req, res) => {
-    console.log("name:");
-    console.log(process.env.NAME);
-    
+    console.log("Sirviendo config.js con:", process.env.NAME); // traza
     res.setHeader('Content-Type', 'application/javascript');
-
     res.send(`
       window.CONFIG = {
         apiUrl: "${process.env.API_URL || ''}",
@@ -34,20 +29,21 @@ app.get('/config.js', (req, res) => {
     `);
 });
 
-const PORT = process.env.PORT || 3000;
-
-//Middleware
+// ======== 2️⃣ Middleware ========
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Archivos estáticos desde public
 app.use(express.static(path.join(__dirname, 'public')));
 
+// ======== 3️⃣ SPA catch-all ========
 app.get(/^\/(?!api).*/, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-//Instancia de OpenAI
+// ======== 4️⃣ OpenAI ========
 const openai = new OpenAI({
-    apiKey: process.env.OPEN_API_KEY,
+    apiKey: process.env.OPEN_API_KEY
 });
 
 
