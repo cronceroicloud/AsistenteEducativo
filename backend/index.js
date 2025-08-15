@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 //Cargar configuración de api key
-dotenv.config();
+dotenv.config({ path: '../.env' });
 
 // Obtener __dirname en ES Modules
 const __filename = fileURLToPath(import.meta.url);
