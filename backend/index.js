@@ -5,19 +5,11 @@ import OpenAI from "openai";
 import { fileURLToPath } from 'url';
 import path from 'path';
 import axios from 'axios';
-console.log("START");
-console.log("OPEN_API_KEY:", process.env.OPEN_API_KEY);
-console.log("API_URL:", process.env.API_URL);
+
 
 //Cargar configuración de api key
 dotenv.config();
-console.log("START");
-console.log("OPEN_API_KEY:", process.env.OPEN_API_KEY);
-console.log("API_URL:", process.env.API_URL);
 
-console.log("NAME:", process.env.NAME);
-console.log(process.env.API_URL);
-console.log("TEST_VAR:", process.env.TEST_VAR);
 
 // Obtener __dirname en ES Modules
 const __filename = fileURLToPath(import.meta.url);
