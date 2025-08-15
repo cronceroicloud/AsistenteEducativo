@@ -20,14 +20,15 @@ const app = express();
 
 // server.ts (Node + Express)
 app.get('/config.js', (req, res) => {
-    res.type('application/javascript');
+    res.setHeader('Content-Type', 'application/javascript');
+
     res.send(`
-    window.CONFIG = {
-      apiUrl: "${process.env.API_URL}",
-      nombre: "${process.env.NAME}",
-      miArray: ["dato1", "dato2"]
-    };
-  `);
+      window.CONFIG = {
+        apiUrl: "${process.env.API_URL || ''}",
+        nombre: "${process.env.NAME || ''}",
+        miArray: ["dato1","dato2"]
+      };
+    `);
 });
 
 const PORT = process.env.PORT || 3000;
