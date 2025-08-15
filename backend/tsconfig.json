@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "outDir": "public/assets/dist",
+    "rootDir": "public/assets/js",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "public/assets/js/**/*"
+  ]
+}

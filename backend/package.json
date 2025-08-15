@@ -1,0 +1,25 @@
+{
+  "name": "Asistente Escolar",
+  "version": "1.0.0",
+  "description": "Backend Node para traducir idiomas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "build": "tsc",
+    "serve": "node index.js",
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "typescript": "^5.5.3"
+  },
+  "private": true,
+  "author": "Carlos Roncero",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "openai": "^5.12.2"
+  }
+}
