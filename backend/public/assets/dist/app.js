@@ -16,6 +16,7 @@ const API_URL = window.CONFIG.apiUrl;
 //const NOMBRE = window.NAME;
 
 
+
 // Elementos del DOM
 const messageInput = document.getElementById("messageInput");
 const chatMessages = document.getElementById("chatMessages");
@@ -26,6 +27,7 @@ const userId= Date.now() + Math.floor(777+Math.random()*1000);
 
 
 console.log(NOMBRE);
+console.log("hola");
 
 // Función para manejar el evento de presionar Enter
 function handleKeyPress(event) {
