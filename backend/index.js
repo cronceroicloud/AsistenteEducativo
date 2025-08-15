@@ -12,7 +12,7 @@ dotenv.config();
 
 
 console.log(process.env.API_URL);
-console.log("Aquí");
+console.log("TEST_VAR:", process.env.TEST_VAR);
 
 // Obtener __dirname en ES Modules
 const __filename = fileURLToPath(import.meta.url);
