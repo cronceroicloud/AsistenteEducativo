@@ -8,33 +8,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-//Recupero la variable de entorno con la dirección del fronted
-//const API_URL = window.API_URL;
+document.addEventListener("DOMContentLoaded", () => {
 
-const NOMBRE  = window.CONFIG.nombre;
-const API_URL = window.CONFIG.apiUrl;
-//const NOMBRE = window.NAME;
+  //Recupero la variable de entorno con la dirección del backend
+  const NOMBRE  = window.CONFIG?.nombre;
+  const API_URL = window.CONFIG?.apiUrl;
 
+  console.log("CONFIG FRONT:", window.CONFIG);
+  console.log("API_URL:", API_URL);
 
+  // Elementos del DOM
+  const messageInput     = document.getElementById("messageInput");
+  const chatMessages     = document.getElementById("chatMessages");
+  const typingIndicator  = document.getElementById("typingIndicator");
+  document.getElementById("nombre").textContent = NOMBRE || "";
 
-// Elementos del DOM
-const messageInput = document.getElementById("messageInput");
-const chatMessages = document.getElementById("chatMessages");
-const sendButton = document.getElementById("sendButton");
-const typingIndicator = document.getElementById("typingIndicator");
-document.getElementById("nombre").textContent = NOMBRE;
-const userId= Date.now() + Math.floor(777+Math.random()*1000);
+  const userId = Date.now() + Math.floor(777 + Math.random() * 1000);
 
-
-console.log(NOMBRE);
-console.log("hola");
-
-// Función para manejar el evento de presionar Enter
-function handleKeyPress(event) {
+  // Función para manejar el evento de presionar Enter
+  window.handleKeyPress = function handleKeyPress(event) {
     if (event.key === "Enter") {
-        sendMessage();
+      sendMessage();
     }
-}
+  }
+    
 // Función para enviar mensaje
 function sendMessage() {
     return __awaiter(this, void 0, void 0, function* () {
