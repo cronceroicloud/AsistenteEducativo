@@ -169,20 +169,21 @@
     }
 </script>
 
-<!-- Cargamos sólo 1 vez config.js -->
+<!-- Cargamos solo 1 vez config.js -->
 <script src="/config.js"></script>
 
-<!-- Comprobamos para depuración -->
+<!-- Debug -->
 <script>
   console.log("CONFIG cargado en el navegador:", window.CONFIG);
 </script>
 
-<!-- IMPORTAMOS app.js sólo cuando el DOM ya está cargado -->
+<!-- Importamos app.js después de que el DOM esté listo -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     import('/assets/dist/app.js');
   });
 </script>
+
 
     
 </body>
