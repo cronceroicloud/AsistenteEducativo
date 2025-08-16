@@ -140,8 +140,5 @@ function hideTypingIndicator() {
     indicator.style.display = "none";
 }
 
-window.handleKeyPress = handleKeyPress;
-window.sendMessage = sendMessage;
-window.sendQuickMessage = sendQuickMessage;
 
 
