@@ -10,10 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 let NOMBRE;
 let API_URL;
+let userId;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const NOMBRE  = window.CONFIG?.nombre;
-  const API_URL = window.CONFIG?.apiUrl;
+  NOMBRE  = window.CONFIG?.nombre;
+  API_URL = window.CONFIG?.apiUrl;
   console.log("CONFIG FRONT:", window.CONFIG);
   console.log("API_URL:", API_URL);
 });
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingIndicator  = document.getElementById("typingIndicator");
   document.getElementById("nombre").textContent = NOMBRE || "";
 
-  const userId = Date.now() + Math.floor(777 + Math.random() * 1000);
+  userId = Date.now() + Math.floor(777 + Math.random() * 1000);
 
   // Función para manejar el evento de presionar Enter
   window.handleKeyPress = function handleKeyPress(event) {
