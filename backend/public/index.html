@@ -67,20 +67,8 @@
     </div>
   </div>
 
-  <!-- Cargamos sólo 1 vez config.js -->
-  <script src="/config.js"></script>
-
-  <!-- Depuración -->
-  <script>
-    console.log("CONFIG cargado en el navegador:", window.CONFIG);
-  </script>
-
-  <!-- Importamos app.js sólo cuando el DOM está listo -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      import('/assets/dist/app.js');
-    });
-  </script>
+<script src="/config.js"></script>
+<script src="/assets/dist/app.js"></script>
 </body>
 </html>
 
