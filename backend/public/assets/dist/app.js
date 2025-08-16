@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+let NOMBRE;
+let API_URL;
 
 document.addEventListener("DOMContentLoaded", () => {
   const NOMBRE  = window.CONFIG?.nombre;
