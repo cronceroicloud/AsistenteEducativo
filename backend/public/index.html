@@ -1,193 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistente Virtual - Centro Educativo</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente Virtual - Centro Educativo</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<div class="chat-container">
+  <div class="chat-container">
     <div class="chat-header">
-        <div class="header-content">
-            <div class="bot-avatar">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V7H9V9H21ZM3 19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V11H3V19ZM5 13H19V19H5V13Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <div class="header-info">
-                <h1>Asistente Virtual</h1>
-                <p><span id="nombre"></p>
-            </div>
-            <div class="status-indicator">
-                <span class="status-dot"></span>
-                <span>En línea</span>
-            </div>
+      <div class="header-content">
+        <div class="bot-avatar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V7H9V9H21ZM3 19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V11H3V19ZM5 13H19V19H5V13Z" fill="currentColor"/>
+          </svg>
         </div>
+        <div class="header-info">
+          <h1>Asistente Virtual</h1>
+          <p><span id="nombre"></span></p>
+        </div>
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span>En línea</span>
+        </div>
+      </div>
     </div>
 
     <div class="chat-messages" id="chatMessages">
-        <div class="message bot-message">
-            <div class="message-avatar">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V7H9V9H21ZM3 19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V11H3V19ZM5 13H19V19H5V13Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <div class="message-content">
-                <p>¡Hola! Soy el asistente virtual del centro educativo. Estoy aquí para ayudarte con información sobre:</p>
-                <ul>
-                    <li>Estudios ofertados</li>
-                    <li>Proceso de inscripción</li>
-                    <li>Horarios y calendario académico</li>
-                    <li>Servicios estudiantiles</li>
-                    <li>Contacto y ubicación</li>
-                </ul>
-                <p>¿En qué puedo ayudarte hoy?</p>
-            </div>
-            <div class="message-time">10:30 AM</div>
+      <div class="message bot-message">
+        <div class="message-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V7H9V9H21ZM3 19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V11H3V19ZM5 13H19V19H5V13Z" fill="currentColor"/>
+          </svg>
         </div>
+        <div class="message-content">
+          <p>¡Hola! Soy el asistente virtual del centro educativo. Estoy aquí para ayudarte con información sobre:</p>
+          <ul>
+            <li>Estudios ofertados</li>
+            <li>Proceso de inscripción</li>
+            <li>Horarios y calendario académico</li>
+            <li>Servicios estudiantiles</li>
+            <li>Contacto y ubicación</li>
+          </ul>
+          <p>¿En qué puedo ayudarte hoy?</p>
+        </div>
+        <div class="message-time">10:30 AM</div>
+      </div>
     </div>
 
     <div class="quick-actions">
-        <button class="quick-action-btn" onclick="sendQuickMessage('¿Qué oferta formativa ofrece el centro educativo?')">
-            📚 Oferta Formativa
-        </button>
-        <button class="quick-action-btn" onclick="sendQuickMessage('¿Cómo me inscribo en alguna de las enseñanzas ofertadas?')">
-            📝 Inscripción
-        </button>
-        <button class="quick-action-btn" onclick="sendQuickMessage('¿Cuáles son los horarios?')">
-            🕐 Horarios
-        </button>
-        <button class="quick-action-btn" onclick="sendQuickMessage('¿Dónde están ubicados?')">
-            📍 Ubicación
-        </button>
+      <button class="quick-action-btn" onclick="sendQuickMessage('¿Qué oferta formativa ofrece el centro educativo?')">📚 Oferta Formativa</button>
+      <button class="quick-action-btn" onclick="sendQuickMessage('¿Cómo me inscribo en alguna de las enseñanzas ofertadas?')">📝 Inscripción</button>
+      <button class="quick-action-btn" onclick="sendQuickMessage('¿Cuáles son los horarios?')">🕐 Horarios</button>
+      <button class="quick-action-btn" onclick="sendQuickMessage('¿Dónde están ubicados?')">📍 Ubicación</button>
     </div>
 
     <div class="chat-input-container">
-        <div class="chat-input-wrapper">
-            <input
-                    type="text"
-                    id="messageInput"
-                    placeholder="Escribe tu pregunta aquí..."
-                    onkeypress="handleKeyPress(event)"
-            >
-            <button id="sendButton" onclick="sendMessage()">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor"/>
-                </svg>
-            </button>
-        </div>
-        <div class="typing-indicator" id="typingIndicator" style="display: none;">
-            <div class="typing-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <span>El asistente está escribiendo...</span>
-        </div>
+      <div class="chat-input-wrapper">
+        <input type="text" id="messageInput" placeholder="Escribe tu pregunta aquí..." onkeypress="handleKeyPress(event)">
+        <button id="sendButton" onclick="sendMessage()">Enviar</button>
+      </div>
+      <div class="typing-indicator" id="typingIndicator" style="display: none;">
+        <div class="typing-dots"><span></span><span></span><span></span></div>
+        <span>El asistente está escribiendo...</span>
+      </div>
     </div>
-</div>
+  </div>
 
-<script>
-    function handleKeyPress(event) {
-        if (event.key === 'Enter') {
-            sendMessage();
-        }
-    }
+  <!-- Cargamos sólo 1 vez config.js -->
+  <script src="/config.js"></script>
 
-    function sendMessage() {
-        const input = document.getElementById('messageInput');
-        const message = input.value.trim();
+  <!-- Depuración -->
+  <script>
+    console.log("CONFIG cargado en el navegador:", window.CONFIG);
+  </script>
 
-
-
-        if (message) {
-            addMessage(message, 'user');
-            input.value = '';
-
-            // Simular respuesta del bot (aquí conectarías con tu backend)
-            showTypingIndicator();
-            setTimeout(() => {
-                hideTypingIndicator();
-                addMessage('Gracias por tu pregunta. Esta funcionalidad se conectará con el backend del asistente escolar.', 'bot');
-            }, 30000);
-        }
-    }
-
-    function sendQuickMessage(message) {
-        addMessage(message, 'user');
-
-        // Simular respuesta del bot
-        showTypingIndicator();
-        setTimeout(() => {
-            hideTypingIndicator();
-            addMessage('Gracias por tu pregunta. Esta funcionalidad se conectará con el backend del asistente escolar.', 'bot');
-        }, 30000);
-    }
-
-    function addMessage(text, sender) {
-        const messagesContainer = document.getElementById('chatMessages');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}-message`;
-
-        const currentTime = new Date().toLocaleTimeString('es-ES', {
-            hour: '2-digit',
-            minute: '2-digit'
-        });
-
-        if (sender === 'bot') {
-            messageDiv.innerHTML = `
-                    <div class="message-avatar">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V7H9V9H21ZM3 19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V11H3V19ZM5 13H19V19H5V13Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <div class="message-content">
-                        <p>${text}</p>
-                    </div>
-                    <div class="message-time">${currentTime}</div>
-                `;
-        } else {
-            messageDiv.innerHTML = `
-                    <div class="message-content">
-                        <p>${text}</p>
-                    </div>
-                    <div class="message-time">${currentTime}</div>
-                `;
-        }
-
-        messagesContainer.appendChild(messageDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }
-
-    function showTypingIndicator() {
-        document.getElementById('typingIndicator').style.display = 'flex';
-    }
-
-    function hideTypingIndicator() {
-        document.getElementById('typingIndicator').style.display = 'none';
-    }
-</script>
-
-<!-- Cargamos solo 1 vez config.js -->
-<script src="/config.js"></script>
-
-<!-- Debug -->
-<script>
-  console.log("CONFIG cargado en el navegador:", window.CONFIG);
-</script>
-
-<!-- Importamos app.js después de que el DOM esté listo -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    import('/assets/dist/app.js');
-  });
-</script>
-
-
-    
+  <!-- Importamos app.js sólo cuando el DOM está listo -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      import('/assets/dist/app.js');
+    });
+  </script>
 </body>
 </html>
+
 
 
 
