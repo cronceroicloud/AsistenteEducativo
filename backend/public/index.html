@@ -169,12 +169,21 @@
     }
 </script>
 
-<script src="https://asistente-educativo.onrender.com/config.js"></script>
+<!-- Cargamos sólo 1 vez config.js -->
 <script src="/config.js"></script>
+
+<!-- Comprobamos para depuración -->
 <script>
   console.log("CONFIG cargado en el navegador:", window.CONFIG);
 </script>
-<script type="module" src="assets/dist/app.js"></script>
+
+<!-- IMPORTAMOS app.js sólo cuando el DOM ya está cargado -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    import('/assets/dist/app.js');
+  });
+</script>
+
     
 </body>
 </html>
