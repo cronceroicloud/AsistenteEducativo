@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 
-//Recupero la variable de entorno con la dirección del backend
-  const NOMBRE  = window.CONFIG?.nombre;
-  const API_URL = window.CONFIG?.apiUrl;
+//Recupero la variable de entorno con la dirección del backend222
+  const NOMBRE  = window.CONFIG.nombre;
+  const API_URL = window.CONFIG.apiUrl;
 
   console.log("CONFIG FRONTs:", window.CONFIG);
   console.log("API_URLs:", API_URL);
