@@ -150,10 +150,10 @@ function hideTypingIndicator() {
     const indicator = document.getElementById("typingIndicator");
     indicator.style.display = "none";
 }
-
-})
-// Hacer las funciones globales para que puedan ser llamadas desde el HTML
-;
 window.handleKeyPress = handleKeyPress;
 window.sendMessage = sendMessage;
 window.sendQuickMessage = sendQuickMessage;
+})
+// Hacer las funciones globales para que puedan ser llamadas desde el HTML
+
+
