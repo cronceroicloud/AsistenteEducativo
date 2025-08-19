@@ -11,11 +11,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 //Recupero la variable de entorno con la dirección del fronted
 //const API_URL = window.API_URL;
 
-const NOMBRE  = window.CONFIG.nombre;
-const API_URL = window.CONFIG.apiUrl;
-//const NOMBRE = window.NAME;
-console.log(window.CONFIG.apiUrl);
-console.log("Ahora");
+function waitForConfig() {
+  return new Promise((resolve) => {
+    if (window.CONFIG) {
+      resolve()
+    } else {
+      const checkConfig = () => {
+        if (window.CONFIG) {
+          resolve()
+        } else {
+          setTimeout(checkConfig, 50)
+        }
+      }
+      checkConfig()
+    }
+  })
+}
+
+waitForConfig().then(() => {
+  const NOMBRE = window.CONFIG.nombre
+  const API_URL = window.CONFIG.apiUrl
 
 // Elementos del DOM
 const messageInput = document.getElementById("messageInput");
@@ -135,6 +150,8 @@ function hideTypingIndicator() {
     const indicator = document.getElementById("typingIndicator");
     indicator.style.display = "none";
 }
+
+})
 // Hacer las funciones globales para que puedan ser llamadas desde el HTML
 ;
 window.handleKeyPress = handleKeyPress;
