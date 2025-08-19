@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <script src="/config.js"></script>
-<script src="/assets/dist/app.js"></script>
+<!-- Moved config.js script before app.js to ensure CONFIG is loaded first -->
+<script src="/config.js"></script>
+<script type="module" src="assets/js/app.js"></script>
+  
   <div class="chat-container">
     <div class="chat-header">
       <div class="header-content">
