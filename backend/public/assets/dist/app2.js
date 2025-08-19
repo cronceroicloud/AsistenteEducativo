@@ -30,7 +30,7 @@ function waitForConfig() {
 
 waitForConfig().then(() => {
   const NOMBRE = window.CONFIG.nombre
-  const API_URL = window.CONFIG.apiUrl
+  const API_URL = "/api/asistente";
 
 // Elementos del DOM
 const messageInput = document.getElementById("messageInput");
